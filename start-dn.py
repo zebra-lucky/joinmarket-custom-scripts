@@ -97,7 +97,8 @@ def directory_node_startup():
     clientfactory = DNJMClientProtocolFactory(maker, proto_type="MAKER")
     nodaemon = jm_single().config.getint("DAEMON", "no_daemon")
     daemon = bool(nodaemon)
-    if jm_single().config.get("BLOCKCHAIN", "network") in ["regtest", "testnet", "signet"]:
+    if jm_single().config.get("BLOCKCHAIN", "network") in [
+            "regtest", "testnet", "signet", "testnet4"]:
         startLogging(sys.stdout)
     start_reactor(jm_single().config.get("DAEMON", "daemon_host"),
                       jm_single().config.getint("DAEMON", "daemon_port"),
